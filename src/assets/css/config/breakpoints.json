@@ -1,0 +1,23 @@
+{
+    "full": {
+        "max": "2450px"
+    },
+    "hd": {
+        "max": "1920px"
+    },
+    "wide": {
+        "max": "1380px"
+    },
+    "desktop": {
+        "max": "1020px"
+    },
+    "tablet": {
+        "max": "768px"
+    },
+    "phablet": {
+        "max": "640px"
+    },
+    "mobile": {
+        "max": "480px"
+    }
+}
