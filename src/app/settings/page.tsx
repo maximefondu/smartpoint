@@ -1,21 +1,13 @@
-import { Box } from '@components/Box'
-import { Field } from '@components/form/Field'
+import { BoxRoute } from '@components/settings/BoxRoute'
 
-export default function () {
+export default async function () {
     return (
         <section>
-            <h1 className="text-xl font-bold mb-12">Settings</h1>
-            <Box>
-                <h2 className="text-xl font-bold">Route</h2>
-                <p className="text-grey-800">Read products</p>
+            <h1 className="text-2xl font-bold mb-12">Settings</h1>
 
-                <Field
-                    className="mt-8"
-                    name="route-items"
-                    placeholder="https://smartpoint.be/products"
-                    defaultValue="https://fakestoreapi.com/products?limit=10"
-                />
-            </Box>
+            <div className="flex">
+                <BoxRoute />
+            </div>
         </section>
     )
 }

@@ -1,6 +1,9 @@
-type Props = {
-    className: string
+import { UseFormRegister } from 'react-hook-form'
 
+type Props = {
+    className?: string
+
+    register?: UseFormRegister<any>
     label?: string | number
     type?: 'text' | 'number' | 'email'
     id?: string
@@ -11,12 +14,17 @@ type Props = {
     append?: string | number
 }
 
-export const Field = ({ className = '', label, type = 'text', id, name, defaultValue, placeholder, append }: Props) => {
+export const Field = ({ className = '', label, type = 'text', id, name, defaultValue, placeholder, append, register }: Props) => {
     return (
         <div className={`flex flex-col ${className}`}>
-            {label && <label htmlFor={id}>{label}</label>}
+            {label && (
+                <label className="text-grey-800 mb-3" htmlFor={id}>
+                    {label}
+                </label>
+            )}
             <div className="bg-grey-200 rounded">
                 <input
+                    {...register?.(name)}
                     type={type}
                     id={id}
                     name={name}

@@ -1,5 +1,6 @@
 {
     "none": "0",
     "DEFAULT": "8px",
+    "md": "14px",
     "full": "9999px"
 }

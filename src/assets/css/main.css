@@ -2,4 +2,5 @@
 @import './font-face.css';
 @import './body.css';
 @import 'tailwindcss/components';
+@import './grid.css';
 @import 'tailwindcss/utilities';

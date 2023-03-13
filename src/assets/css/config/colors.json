@@ -7,6 +7,10 @@
         "DEFAULT": "#4684F7",
         "200": "#EDF5FE"
     },
+    "green": {
+        "DEFAULT": "#6BCC69",
+        "200": "#F0FAF0"
+    },
     "grey": {
         "100": "#FDFDFD",
         "200": "#F5F5F5",
