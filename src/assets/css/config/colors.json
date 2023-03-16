@@ -11,6 +11,10 @@
         "DEFAULT": "#6BCC69",
         "200": "#F0FAF0"
     },
+    "red": {
+        "DEFAULT": "#CC4848",
+        "200": "#FAEDED"
+    },
     "grey": {
         "100": "#FDFDFD",
         "200": "#F5F5F5",
