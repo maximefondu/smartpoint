@@ -10,16 +10,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model ExternalService {
-  id    Int     @id @default(autoincrement())
-  name  String
-  Route Route[]
-}
-
 model Route {
   id                Int             @id @default(autoincrement())
   name              String
-  externalService   ExternalService? @relation(fields: [externalServiceId], references: [id])
-  externalServiceId Int?
   url               String?
+  routeKey RouteKey[]
+}
+
+model RouteKey {
+  id                Int             @id @default(autoincrement())
+  route   Route @relation(fields: [routeId], references: [id])
+  routeId Int
+  key String
+  value String?
+  required Boolean
 }

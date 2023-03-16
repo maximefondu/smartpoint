@@ -1,6 +1,7 @@
-import '@assets/css/main.css'
-
+import { Notification } from '@components/Notification'
 import { QueryClient } from '@components/QueryClient'
+
+import '@assets/css/main.css'
 
 export const metadata = {
     title: 'Smartpoint',
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
             <body className="bg-grey-100 p-12">
                 <main>
+                    <Notification />
                     <QueryClient>{children}</QueryClient>
                 </main>
             </body>

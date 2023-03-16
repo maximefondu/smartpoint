@@ -7,6 +7,7 @@ module.exports = {
         fontFamily: require('./src/assets/css/config/font.json')['fontFamily'],
         fontSize: require('./src/assets/css/config/font.json')['fontSize'],
         boxShadow: require('./src/assets/css/config/shadow.json'),
-        borderRadius: require('./src/assets/css/config/rounded.json')
+        borderRadius: require('./src/assets/css/config/rounded.json'),
+        transitionDuration: require('./src/assets/css/config/transition.json')['transitionDuration']
     }
 }

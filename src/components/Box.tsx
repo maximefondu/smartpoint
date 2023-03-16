@@ -1,6 +1,8 @@
+import { ReactNode } from 'react'
+
 type Props = {
     className?: string
-    children: any
+    children: ReactNode
 }
 
 export const Box = ({ children, className = '' }: Props) => {

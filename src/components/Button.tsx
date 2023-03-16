@@ -1,13 +1,15 @@
+import { ReactNode } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import Link from 'next/link'
 
 type Props = VariantProps<typeof button> & {
     className?: string
-    children: any
+    children: ReactNode
+    type?: 'submit' | 'button'
     href?: any
 }
 
-const button = cva('inline-flex px-12 py-4 rounded transition-all duration-500 hover:rounded-md', {
+const button = cva('inline-flex px-12 justify-center py-4 rounded transition-all duration-500 hover:rounded-md', {
     variants: {
         intent: {
             primary: 'bg-blue text-white font-medium'
@@ -18,11 +20,11 @@ const button = cva('inline-flex px-12 py-4 rounded transition-all duration-500 h
     }
 })
 
-export const Button = ({ children, className, intent, href }: Props) => {
+export const Button = ({ children, className, intent, href, type = 'button' }: Props) => {
     const Tag = href ? Link : 'button'
 
     return (
-        <Tag href={href} className={button({ intent, className })}>
+        <Tag href={href} type={type} className={button({ intent, className })}>
             {children}
         </Tag>
     )

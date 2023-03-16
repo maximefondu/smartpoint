@@ -1,3 +1,4 @@
+import { ChangeEventHandler } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 
 import ArrowIcon from '@svg/arrow.svg'
@@ -11,8 +12,9 @@ type Props = {
     id?: string
     name: string
     placeholder: string
-    disabled?: boolean
+    completed?: boolean
     valueAsNumber?: boolean
+    onChange?: ChangeEventHandler
 
     options: {
         name: string | number
@@ -22,7 +24,7 @@ type Props = {
     append?: string | number
 }
 
-export const Select = ({ className = '', register, label, id, name, placeholder, options = [], disabled = false, valueAsNumber = false }: Props) => {
+export const Select = ({ className = '', register, label, id, name, placeholder, options = [], completed = false, valueAsNumber = false, onChange }: Props) => {
     return (
         <div className={`flex flex-col ${className}`}>
             {label && (
@@ -32,16 +34,14 @@ export const Select = ({ className = '', register, label, id, name, placeholder,
             )}
             <div
                 className={`rounded relative transition-all border ${
-                    disabled ? 'bg-green-200 border-green text-green' : 'border-grey-200 bg-grey-200 hover:bg-grey-400'
+                    completed ? 'bg-green-200 border-green text-green' : 'border-grey-200 bg-grey-200 hover:bg-grey-400'
                 }`}>
                 <select
-                    {...register?.(name, { valueAsNumber })}
+                    {...register?.(name, { valueAsNumber: valueAsNumber })}
                     name={name}
+                    onChange={onChange}
                     id={id}
-                    disabled={disabled}
-                    className={`appearance-none bg-transparent outline-none px-8 py-4 w-full disabled:opacity-100 cursor-pointer ${
-                        disabled ? 'cursor-auto' : ''
-                    }`}>
+                    className={`appearance-none bg-transparent outline-none px-8 py-4 w-full cursor-pointer`}>
                     <option value="">{placeholder}</option>
                     {options.map(({ name, value }) => {
                         return (
@@ -52,7 +52,7 @@ export const Select = ({ className = '', register, label, id, name, placeholder,
                     })}
                 </select>
 
-                {disabled ? (
+                {completed ? (
                     <ValidateIcon className={`w-9 absolute top-1/2 right-8 -translate-y-1/2 pointer-events-none fill-green`} />
                 ) : (
                     <ArrowIcon className={`w-8 absolute top-1/2 right-8 -translate-y-1/2 pointer-events-none fill-grey-600`} />
