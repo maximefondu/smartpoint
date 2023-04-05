@@ -12,7 +12,7 @@ datasource db {
 
 model Route {
   id                Int             @id @default(autoincrement())
-  name              String
+  name              String @default("")
   url               String?
   routeKey RouteKey[]
 }
@@ -21,7 +21,7 @@ model RouteKey {
   id                Int             @id @default(autoincrement())
   route   Route @relation(fields: [routeId], references: [id])
   routeId Int
-  key String
+  key String @default("")
   value String?
-  required Boolean
+  required Boolean @default(false)
 }

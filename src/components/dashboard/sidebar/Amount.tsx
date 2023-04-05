@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { parseNumberToPrice } from '@features/helpers/parseNumberToPrice'
+import { parseNumberToPrice } from '@helpers/parseNumberToPrice'
 import { useCart } from '@contexts/dashboard/CartContextProvider'
 
 export const Amount = () => {

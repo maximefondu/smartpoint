@@ -26,7 +26,8 @@
             "@features/*": ["./src/features/*"],
             "@svg/*": ["./src/assets/svg/*"],
             "@contexts/*": ["./src/contexts/*"],
-            "@type/*": ["./src/type/*"]
+            "@type/*": ["./src/type/*"],
+            "@helpers/*": ["./src/helpers/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

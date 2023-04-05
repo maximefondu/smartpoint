@@ -1,3 +1,5 @@
+'use client'
+
 import { useCart } from '@contexts/dashboard/CartContextProvider'
 import CartIcon from '@svg/cart.svg'
 

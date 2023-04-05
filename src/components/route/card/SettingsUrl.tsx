@@ -4,7 +4,7 @@ import { Route, RouteKey } from '@prisma/client'
 import { toast } from 'sonner'
 
 import { Field } from '@components/form/Field'
-import { useDebounce } from '@features/helpers/debounce'
+import { useDebounce } from '@helpers/debounce'
 import { useUpdateRoute } from '@features/route/hooks/use-update-route'
 
 type Props = {

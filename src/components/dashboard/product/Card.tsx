@@ -1,7 +1,7 @@
 'use client'
 
 import { TypeReadProduct } from '@features/product/type'
-import { parseNumberToPrice } from '@features/helpers/parseNumberToPrice'
+import { parseNumberToPrice } from '@helpers/parseNumberToPrice'
 
 import { useCart } from '@contexts/dashboard/CartContextProvider'
 

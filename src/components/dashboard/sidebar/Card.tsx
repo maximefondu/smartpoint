@@ -1,6 +1,6 @@
 'use client'
 
-import { parseNumberToPrice } from '@features/helpers/parseNumberToPrice'
+import { parseNumberToPrice } from '@helpers/parseNumberToPrice'
 import { useCart } from '@contexts/dashboard/CartContextProvider'
 
 import { ProductCart } from '@type/dashboard'
@@ -25,7 +25,7 @@ export const Card = ({ id, name, price, quantity }: ProductCart) => {
 
     const reduce = () => {
         const items = cart.items.map((item) => {
-            if (item.id === id) {
+            if (item.id === id && item.quantity > 1) {
                 item.quantity = item.quantity - 1
             }
 
@@ -63,13 +63,13 @@ export const Card = ({ id, name, price, quantity }: ProductCart) => {
                 <p className="font-bold">{parseNumberToPrice(price)}</p>
             </div>
 
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center">
                 <button
                     onClick={reduce}
                     className="w-8 h-8 flex justify-center items-center rounded-full border border-grey-600 flex-shrink-0  transition-all hover:border-red hover:bg-red-200 group">
                     <RemoveIcon className="w-[9px] fill-grey-600 transition-all group-hover:fill-red" />
                 </button>
-                <span className="text-xs">{quantity}</span>
+                <span className="text-xs min-w-[3rem] text-center">{quantity}</span>
                 <button
                     onClick={increase}
                     className="w-8 h-8 flex justify-center items-center rounded-full border border-grey-600 flex-shrink-0 transition-all hover:border-green hover:bg-green-200 group">

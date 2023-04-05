@@ -20,7 +20,9 @@ export const Sidebar = () => {
                 <div className="flex flex-col gap-8">
                     <Amount />
 
-                    <Button className="w-full">Checkout</Button>
+                    <Button href={'/dashboard/checkout'} className="w-full">
+                        Paid
+                    </Button>
                 </div>
             </div>
         </div>
