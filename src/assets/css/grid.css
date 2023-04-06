@@ -1,3 +1,7 @@
+.wrap {
+    @apply max-w-[134rem] mx-auto px-12;
+}
+
 .col {
     @apply grid grid-cols-12 gap-12;
 }

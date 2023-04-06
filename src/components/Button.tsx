@@ -12,7 +12,8 @@ type Props = VariantProps<typeof button> & {
 const button = cva('inline-flex px-12 justify-center py-4 rounded transition-all duration-500 hover:rounded-md', {
     variants: {
         intent: {
-            primary: 'bg-blue text-white font-medium'
+            primary: 'bg-blue text-white font-medium',
+            link: 'px-0 py-0 leading-tight underline text-grey-800 hover:text-main'
         }
     },
     defaultVariants: {
