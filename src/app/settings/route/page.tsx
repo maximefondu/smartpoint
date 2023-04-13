@@ -1,6 +1,8 @@
 import { Button } from '@components/Button'
 import { List } from '@components/route/List'
 
+export const dynamic = 'force-dynamic'
+
 export default function async() {
     return (
         <section className="wrap py-16">
