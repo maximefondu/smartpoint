@@ -4,6 +4,8 @@ import { readProducts } from '@features/product/queries/read-products'
 
 import { CartContextProvider } from '@contexts/dashboard/CartContextProvider'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Dashboard() {
     const products = await readProducts()
 
