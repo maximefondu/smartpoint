@@ -11,6 +11,7 @@ model Route {
   id       Int        @id @default(autoincrement())
   name     String     @default("")
   url      String?
+  arrayPath String?
   routeKey RouteKey[]
 }
 
