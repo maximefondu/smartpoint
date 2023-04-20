@@ -13,7 +13,8 @@
     },
     "red": {
         "DEFAULT": "#CC4848",
-        "200": "#FAEDED"
+        "200": "#FAEDED",
+        "400": "#EDBBBB"
     },
     "grey": {
         "100": "#FDFDFD",
