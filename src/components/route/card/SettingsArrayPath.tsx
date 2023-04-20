@@ -10,15 +10,14 @@ type Props = {
     }
 }
 
-export const SettingsUrl = ({ useFormRoute }: Props) => {
+export const SettingsArrayPath = ({ useFormRoute }: Props) => {
     return (
         <Field
             register={useFormRoute.register}
-            name="url"
-            label="Indicate url of your API."
-            placeholder="https://fakestoreapi.com/products"
-            error={useFormRoute.formState.errors.url}
-            required={true}
+            name="arrayPath"
+            label="Indicate the path of items array."
+            placeholder="products.items"
+            error={useFormRoute.formState.errors.arrayPath}
         />
     )
 }

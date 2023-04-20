@@ -8,7 +8,7 @@ type Props = {
 
     register?: UseFormRegister<any>
     label?: string | number
-    type?: 'text' | 'number' | 'email'
+    type?: 'text' | 'number' | 'email' | 'password'
     id?: string
     name: string
     defaultValue?: string | number
@@ -17,6 +17,7 @@ type Props = {
     onInput?: FormEventHandler
     completed?: boolean
     error?: FieldError
+    required?: boolean
 
     append?: string | number
 }
@@ -34,7 +35,8 @@ export const Field = ({
     onBlur,
     onInput,
     completed,
-    error
+    error,
+    required
 }: Props) => {
     return (
         <div className={`flex flex-col ${className}`}>
@@ -43,12 +45,10 @@ export const Field = ({
                     {label}
                 </label>
             )}
-            <div
-                className={`rounded border relative focus:bg-grey-200 transition-all ${
-                    completed ? 'bg-green-200 text-green border-green' : 'bg-grey-200 border-grey-200'
-                } ${error && 'text-red bg-red-200 border-red'}`}>
+
+            <div className={`rounded border bg-grey-200 border-grey-200 relative transition-all ${error && 'text-red bg-red-200 border-red'}`}>
                 <input
-                    {...register?.(name)}
+                    {...register?.(name, { required: required ? 'Field is required!' : false })}
                     type={type}
                     id={id}
                     name={name}
@@ -56,10 +56,9 @@ export const Field = ({
                     onInput={onInput}
                     defaultValue={defaultValue}
                     placeholder={placeholder}
-                    className="bg-transparent outline-none px-8 py-4 w-full placeholder:text-grey-800 peer"
+                    className={`bg-transparent outline-none px-8 py-4 w-full peer ${error ? 'placeholder:text-red-400' : 'placeholder:text-grey-600'}`}
                 />
                 {append && <span>{append}</span>}
-                {completed && <ValidateIcon className={`w-9 absolute top-1/2 right-8 -translate-y-1/2 pointer-events-none fill-green transition-all`} />}
             </div>
             {error && <p className="mt-2 text-red">{error.message}</p>}
         </div>
