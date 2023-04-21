@@ -15,7 +15,7 @@ const button = cva('inline-flex gap-4 items-center justify-center rounded transi
     variants: {
         intent: {
             primary: 'px-12 py-4 bg-blue text-white font-medium',
-            link: 'leading-tight underline text-grey-800 hover:text-main'
+            link: 'leading-tight underline text-grey-600 hover:text-main'
         }
     },
     defaultVariants: {
