@@ -5,11 +5,8 @@ export const dynamic = 'force-dynamic'
 
 export default function async() {
     return (
-        <section className="wrap py-16">
-            <Button href={'/settings'} intent="link">
-                Retour
-            </Button>
-            <h1 className="text-2xl font-bold mb-12">Settings</h1>
+        <section>
+            <h1 className="text-2xl font-bold mb-12">Routes</h1>
 
             <List />
         </section>

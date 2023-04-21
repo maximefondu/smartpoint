@@ -7,7 +7,7 @@ type Props = {
 
 export const List = ({ items }: Props) => {
     return (
-        <div className="overflow-y-auto max-h-screen p-12">
+        <div className="">
             <ul className="col gap-4">
                 {items.map((item) => {
                     return (
